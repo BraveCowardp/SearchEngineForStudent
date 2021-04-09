@@ -31,7 +31,7 @@ public class Index extends AbstractIndex {
      */
     @Override
     public void addDocument(AbstractDocument document) {
-
+        this.docIdToDocPathMapping.put(document.getDocId(),document.getDocPath());
     }
 
     /**
