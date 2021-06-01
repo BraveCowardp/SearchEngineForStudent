@@ -6,7 +6,7 @@ import hust.cs.javacourse.search.index.AbstractTermTuple;
 import java.util.List;
 
 public class Document extends AbstractDocument{
-
+    public Document(){ }
     /**
      * 获得文档id
      *
@@ -98,6 +98,18 @@ public class Document extends AbstractDocument{
     public int getTupleSize() {
         return this.tuples.size();
     }
+    /**
+     * 构造函数
+     * @param docId：文档id
+     * @param docPath：文档绝对路径
+     */
+    public Document(int docId, String docPath){
+        super(docId, docPath);
+    }
+
+    public Document(int docId, String docPath,List<AbstractTermTuple> tuples){
+        super(docId, docPath, tuples);
+    }
 
     /**
      * 获得Document的字符串表示
@@ -106,6 +118,6 @@ public class Document extends AbstractDocument{
      */
     @Override
     public String toString() {
-        return null;
+        return "Document:{ID:"+this.docId+", Path:"+this.docPath+", Tuples:"+this.tuples.toString()+"}";
     }
 }
